@@ -108,10 +108,10 @@ class Game:
                 quit()
             elif event.type == pygame.KEYDOWN:
                 if event.key == pygame.K_RETURN:
-                    if self.is_correct():
-                        self.score += 1
+                    if self.reveal:
                         self.next_image()
-                    elif self.reveal:
+                    elif self.is_correct():
+                        self.score += 1
                         self.next_image()
                     else:
                         self.reveal = True
